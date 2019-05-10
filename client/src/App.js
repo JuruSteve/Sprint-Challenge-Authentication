@@ -5,10 +5,10 @@ import './App.css'
 import Jokes from './components/jokes'
 import Signup from './components/Signup'
 
-function App () {
+function App (props) {
   const logout = () => {
     localStorage.removeItem('token')
-    this.props.history.push('/')
+    props.history.push('/')
   }
   return (
     <div className='App'>
