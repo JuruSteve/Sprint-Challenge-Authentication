@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Login from './components/Login'
+import { Route, NavLink, withRouter } from 'react-router-dom'
+import './App.css'
+import Jokes from './components/jokes'
 
-function App() {
+function App () {
+  const logout = () => {
+    localStorage.removeItem('token')
+    this.props.history.push('/')
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div>
+        <nav>
+          <NavLink to='/'>
+      Home
+          </NavLink>
+          <div />
+          <NavLink to='/jokes'>
+      Jokes
+          </NavLink>
+          <button onClick={logout}>Logout</button>
+        </nav>
+      </div>
+      <Route exact path='/' component={Login} />
+      <Route exact path='/jokes' component={Jokes} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default withRouter(App)
