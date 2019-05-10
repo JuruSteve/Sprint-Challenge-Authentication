@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import requireAuth from '../auth/requireAuth'
+import './styles.css'
 
 class Jokes extends Component {
     state = {
@@ -16,17 +17,16 @@ class Jokes extends Component {
     render () {
         const {jokes} = this.state
     return (
-      <div>
-        <ul>
+      <div className="jokes">
+        <ul className="jokes-list">
             {
-            jokes
-                 ? 
+            jokes && jokes.length > 0
+                 &&
             jokes.map((joke)=>(
                 <li key={joke.id}>{joke.joke}</li>
             ))
-            :
-            'No jokes available'
         }
+        {jokes.length < 1 && 'Loading ...'}
         </ul>
       </div>
     )

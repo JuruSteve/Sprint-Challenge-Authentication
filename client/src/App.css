@@ -8,7 +8,7 @@
   pointer-events: none;
 }
 
-.App-header {
+.App {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -19,6 +19,25 @@
   color: white;
 }
 
+.container {
+  margin-bottom: 12rem;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar > p {
+  font-size: inherit;
+  padding: 20px;
+  margin: 0;
+}
 .App-link {
   color: #61dafb;
 }
