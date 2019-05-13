@@ -1,0 +1,15 @@
+.jokes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+}
+
+.jokes > ul {
+  list-style: none;
+}
+
+.jokes-likes > li:nth-child(odd) {
+  background: white;
+  color: #282c34;
+}
